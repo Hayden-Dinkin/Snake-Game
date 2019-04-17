@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake</title>
+</head>
+<body>
+    <canvas id = "canvas" width = "100%" height = "100%"></canvas>
+</body>
+</html>
+<script>
+  let canvas = document.getElementById("canvas");
+  let ctx = canvas.getContext("2d");
+  
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  let snake = [];
+  let appleX = Math.floor(Math.random() * canvas.width);
+  let appleY = Math.floor(Math.random() * canvas.height);
+  let direction;
+
+  function renderSnake () {
+      ctx.fillStyle = "green"
+      ctx.fillRect(canvas.width / 2, canvas.height / 2, 17, 17)
+  };
+  
+  function renderApple () {
+    ctx.fillStyle = "red"
+    ctx.fillRect(appleX, appleY, 17, 17)
+  };
+  
+  window.onkeypress = function(e) {
+    switch (e.keyCode) {
+      case 37:
+      direction = "left"
+      console.log(direction)
+      break;
+      case 38:
+      direction = "up"
+      console.log(direction)
+      break;
+      case 39:
+      direction = "right"
+      console.log(direction)
+      break;
+      case 40: 
+      direction = "down"
+      console.log(direction);
+    }
+  }
+
+  renderSnake();
+  renderApple();
+  
+</script>
