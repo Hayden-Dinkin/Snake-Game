@@ -32,23 +32,31 @@
     ctx.fillRect(appleX, appleY, 17, 17)
   };
   
-  window.onkeypress = function(e) {
+  window.onkeydown = function(e) {
     switch (e.keyCode) {
       case 37:
       direction = "left"
-      console.log(direction)
       break;
       case 38:
       direction = "up"
-      console.log(direction)
       break;
       case 39:
       direction = "right"
-      console.log(direction)
       break;
       case 40: 
       direction = "down"
-      console.log(direction);
+      break;
+      case 87: 
+      direction = "up"
+      break;
+      case 65: 
+      direction = "left"
+      break;
+      case 83: 
+      direction = "down"
+      break;
+      case 68: 
+      direction = "right";
     }
   }
 
